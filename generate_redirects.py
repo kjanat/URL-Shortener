@@ -1,7 +1,12 @@
 import os, json
 
-with open("redirects.json", "r") as f:
-    redirects = json.load(f)
+try:
+    with open("redirects.json", "r") as f:
+        redirects = json.load(f)
+except json.JSONDecodeError as e:
+    print(f"Error decoding JSON: {e}")
+    print("Please check the format of redirects.json")
+    raise
 
 os.makedirs("docs/goto", exist_ok=True)
 
