@@ -1,0 +1,12 @@
+books:
+    description: "Books by Kaj Kowalski"
+    url: "https://books.kjanat.com"
+docs:
+    description: "Documentation for Kaj Kowalski"
+    url: "https://docs.kajkowalski.nl"
+pdf:
+    description: "PDF resources"
+    url: "https://pdf.kajkowalski.nl"
+pdf-js:
+    description: "PDF.js resources"
+    url: "https://pdf-js.kajkowalski.nl"

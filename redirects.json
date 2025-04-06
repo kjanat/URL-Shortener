@@ -1,6 +1,18 @@
 {
-  "docs": "https://docs.kajkowalski.nl",
-  "pdf": "https://pdf.kajkowalski.nl",
-  "pdf-js": "https://pdf-js.kajkowalski.nl",
-  "books": "https://books.kjanat.com"
+  "docs": {
+    "url": "https://docs.kajkowalski.nl",
+    "description": "Documentation for Kaj Kowalski"
+  },
+  "pdf": {
+    "url": "https://pdf.kajkowalski.nl",
+    "description": "PDF resources"
+  },
+  "pdf-js": {
+    "url": "https://pdf-js.kajkowalski.nl",
+    "description": "PDF.js resources"
+  },
+  "books": {
+    "url": "https://books.kjanat.com",
+    "description": "Books by Kaj Kowalski"
+  }
 }
