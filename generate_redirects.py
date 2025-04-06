@@ -22,12 +22,14 @@ template = """<!DOCTYPE html>
 </html>
 """
 
+# Generate individual redirect pages
 for slug, url in redirects.items():
     with open(f"docs/goto/{slug}.html", "w") as f:
         f.write(template.format(url, url))
 
+# Generate index.html with an overview of all available redirects
 with open("docs/index.html", "w") as index:
     index.write("<!DOCTYPE html>\n<html>\n  <head><title>Short Links</title></head>\n  <body>\n    <h1>Short Links</h1>\n    <ul>\n")
     for slug in redirects:
-        index.write(f'      <li><a href=\"goto/{slug}.html\">{slug}</a></li>\n')
+        index.write(f'      <li><a href="goto/{slug}.html">{slug}</a></li>\n')
     index.write("    </ul>\n  </body>\n</html>")
