@@ -38,6 +38,7 @@ jobs:
       - name: Generate redirect HTMLs
         run: |
           pip install --upgrade pip
+          pip install --upgrade --requirement requirements.txt
           python generate_redirects.py
       - name: Setup Pages
         uses: actions/configure-pages@v5
