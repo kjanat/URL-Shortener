@@ -1,15 +1,25 @@
 books:
-    description: "Calibre-Web server"
-    url: "https://books.kjanat.com"
-docs:
-    description: "Paperless-ngx server"
-    url: "https://docs.kajkowalski.nl"
-pdf:
-    description: "PDF OCR (Python backend)"
-    url: "https://pdf.kajkowalski.nl"
-pdf-js:
-    description: "PDF OCR (JS Backend)"
-    url: "https://pdf-js.kajkowalski.nl"
+    category: media
+    description: Calibre-Web server
+    url: https://books.kjanat.com
 cal:
-    description: "Google Calendar"
-    url: "https://www.google.com/calendar/hosted/kajkowalski.nl"
+    description: Google Calendar
+    url: https://www.google.com/calendar/hosted/kajkowalski.nl
+docs:
+    category: media
+    description: Paperless-ngx server
+    url: https://docs.kajkowalski.nl
+pdf:
+    category: demo sites
+    description: PDF OCR (Python backend)
+    url: https://pdf.kajkowalski.nl
+pdf-js:
+    category: demo sites
+    description: PDF OCR (JS Backend)
+    url: https://pdf-js.kajkowalski.nl
+new-entry:
+    category: new category
+    description: New entry description
+    url: https://new-entry.example.com
+google.com:
+    url: https://www.google.com
