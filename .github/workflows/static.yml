@@ -36,11 +36,17 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      - name: Generate redirect HTMLs
+      - name: Install dependencies
         run: |
+          # Install yq for YAML/JSON parsing
+          snap install yq
+          # Install necessary Python packages
           pip install --upgrade pip
           pip install --upgrade --requirement requirements.txt
-          python generate_redirects.py
+      - name: Run Sync Redirects
+        run: bash ./scripts/Sync-Redirects.sh --verbose
+      - name: Generate redirect HTMLs
+        run: python generate_redirects.py
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
