@@ -44,12 +44,12 @@ https://github.com/kjanat/url-shortener/blob/master/docs/Sync-Redirects.md
 param (
     [Parameter(Mandatory = $false, ValueFromPipeline, ValueFromPipelineByPropertyName, HelpMessage = 'The root directory of the Git repository. Defaults to the parent directory of the script.')]
     [ValidateScript({ Test-Path $_ -PathType Container })]
-    [string]$GitRoot = ($PSScriptRoot -match '^\s*$' ? (Get-Item 'C:\Users\kjana\Projects\url-shortener\') : (Get-Item $PSScriptRoot).Parent),
-    
+    [string]$GitRoot = ($PSScriptRoot -match '^\s*$') ? (Get-Item "$env:USERPROFILE\Projects\url-shortener\") : (Get-Item $PSScriptRoot).Parent,
+
     [Parameter(Mandatory = $false, ValueFromPipeline, ValueFromPipelineByPropertyName, HelpMessage = 'The path to the JSON file containing redirects.')]
     [ValidateScript({ Test-Path $_ -PathType Leaf })]
     [string]$jsonFile = (Join-Path -Path $GitRoot -ChildPath 'redirects.json'),
-    
+
     [Parameter(Mandatory = $false, ValueFromPipeline, ValueFromPipelineByPropertyName, HelpMessage = 'The path to the YAML file containing redirects.')]
     [ValidateScript({ Test-Path $_ -PathType Leaf })]
     [string]$yamlFile = (Join-Path -Path $GitRoot -ChildPath 'redirects.yml')
