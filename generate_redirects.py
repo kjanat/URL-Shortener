@@ -6,15 +6,21 @@ json_file = "redirects.json"
 yaml_file = "redirects.yml"
 
 if os.path.exists(json_file) and os.path.exists(yaml_file):
-    import json, yaml
+    import json
+    import yaml
+
     json_redirects = json.load(open(json_file))
     yaml_redirects = yaml.safe_load(open(yaml_file))
-    redirects = json_redirects if len(json_redirects) >= len(yaml_redirects) else yaml_redirects
+    redirects = (
+        json_redirects if len(json_redirects) >= len(yaml_redirects) else yaml_redirects
+    )
 elif os.path.exists(json_file):
     import json
+
     redirects = json.load(open(json_file))
 elif os.path.exists(yaml_file):
     import yaml
+
     redirects = yaml.safe_load(open(yaml_file))
 else:
     raise FileNotFoundError("No redirects.json or redirects.yml file found.")
@@ -89,7 +95,8 @@ for slug, data in redirects.items():
 
 # Generate the index.html file with the updated style
 with open("public/index.html", "w") as index:
-    index.write("""<!DOCTYPE html>
+    index.write(
+        """<!DOCTYPE html>
 <html>
   <head>
     <title>Redirect links</title>
@@ -101,12 +108,15 @@ with open("public/index.html", "w") as index:
   <body>
     <div class='container'>
       <h1>KJANAT URL Shortener</h1>
-""".format(style))
+""".format(style)
+    )
 
     # Group redirects by category
     categorized_redirects = {}
     for slug, data in redirects.items():
-        category = data.get("category", "") if isinstance(data, dict) else "Uncategorized"
+        category = (
+            data.get("category", "") if isinstance(data, dict) else "Uncategorized"
+        )
         if category not in categorized_redirects:
             categorized_redirects[category] = []
         categorized_redirects[category].append((slug, data))
