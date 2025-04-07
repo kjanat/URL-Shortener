@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "name": "Launch generate_redirects.py",
+      "program": "${workspaceFolder}/${input:programPath}",
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ],
+  "inputs": [
+    {
+      "type": "pickString",
+      "id": "programPath",
+      "description": "Select the Python file to debug",
+      "options": [
+        "generate_redirects.py"
+      ]
+    }
+  ]
+}

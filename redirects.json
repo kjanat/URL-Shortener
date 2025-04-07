@@ -1,18 +1,34 @@
 {
-  "docs": {
-    "url": "https://docs.kajkowalski.nl",
-    "description": "Documentation for Kaj Kowalski"
-  },
-  "pdf": {
-    "url": "https://pdf.kajkowalski.nl",
-    "description": "PDF resources"
-  },
-  "pdf-js": {
-    "url": "https://pdf-js.kajkowalski.nl",
-    "description": "PDF.js resources"
-  },
-  "books": {
-    "url": "https://books.kjanat.com",
-    "description": "Books by Kaj Kowalski"
-  }
+	"pdf": {
+		"url": "https://pdf.kajkowalski.nl",
+		"description": "PDF OCR (Python backend)",
+		"category": "demo sites"
+	},
+	"pdf-js": {
+		"url": "https://pdf-js.kajkowalski.nl",
+		"description": "PDF OCR (JS Backend)",
+		"category": "demo sites"
+	},
+	"docs": {
+		"url": "https://docs.kajkowalski.nl",
+		"description": "Paperless-ngx server",
+		"category": "media"
+	},
+	"cal": {
+		"url": "https://www.google.com/calendar/hosted/kajkowalski.nl",
+		"description": "Google Calendar"
+	},
+	"books": {
+		"url": "https://books.kjanat.com",
+		"description": "Calibre-Web server",
+		"category": "media"
+	},
+	"new-entry": {
+		"url": "https://new-entry.example.com",
+		"description": "New entry description",
+		"category": "new category"
+	},
+	"google.com": {
+		"url": "https://www.google.com"
+	}
 }
