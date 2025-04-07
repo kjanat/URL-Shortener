@@ -23,3 +23,11 @@ new-entry:
     url: https://new-entry.example.com
 google.com:
     url: https://www.google.com
+testvision:
+    category: Geneeskunde
+    url: https://vu.testvision.nl/online/kandidaten
+    description: Examens VU
+testvision-vtg:
+    category: Geneeskunde
+    url: https://ivtg.testvision.nl/online/kandidaten
+    description: interuniversitaire VoortgangsToets Geneeskunde (iVTG)
