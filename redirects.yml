@@ -1,7 +1,3 @@
-books:
-    category: Media
-    description: Calibre-Web server
-    url: https://books.kjanat.com
 cal:
     description: Google Calendar
     url: https://www.google.com/calendar/hosted/kajkowalski.nl
@@ -9,6 +5,10 @@ docs:
     category: Media
     description: Paperless-ngx server
     url: https://docs.kajkowalski.nl
+books:
+    category: Media
+    description: Calibre-Web server
+    url: https://books.kjanat.com
 pdf:
     category: Demo sites
     description: PDF OCR (Python backend)
