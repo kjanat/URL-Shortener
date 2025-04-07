@@ -13,6 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Install ruff
+      - name: Install ruff
+        run: pip install ruff
+
       # Use uv to ensure we have the same ruff version in CI and locally.
       - uses: astral-sh/setup-uv@0c5e2b8115b80b4c7c5ddf6ffdd634974642d182
         with:
@@ -23,4 +27,3 @@ jobs:
       - run: uv run ruff format .
 
       - uses: autofix-ci/action@551dded8c6cc8a1054039c8bc0b8b48c51dfc6ef
-      
