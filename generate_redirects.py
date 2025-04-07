@@ -258,12 +258,16 @@ with open("public/index.html", "w") as index:
             url = data["url"] if isinstance(data, dict) else data
             description = data.get("description", "") if isinstance(data, dict) else ""
             if description:
-                index.write(f'<li><a href="{slug}.html" abbr="Will redirect to: {url}">{slug}</a>: {description}</li>')
+                index.write(
+                    f'<li><a href="{slug}.html" abbr="Will redirect to: {url}">{slug}</a>: {description}</li>'
+                )
             else:
-                index.write(f'<li><a href="{slug}.html" abbr="Will redirect to: {url}">{slug}</a></li>')
+                index.write(
+                    f'<li><a href="{slug}.html" abbr="Will redirect to: {url}">{slug}</a></li>'
+                )
         index.write("</ul>")
 
-    index.write("<button id=\"darkModeToggle\">Toggle Dark Mode</button></div>")
+    index.write('<button id="darkModeToggle">Toggle Dark Mode</button></div>')
     index.write(
         """
     <footer>
