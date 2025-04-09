@@ -1,15 +1,117 @@
-/* General Styles */
+/* Base Styles and Resets */
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 0;
-    margin-top: 30px;
+    font-size: 1.6rem; /* 16px */
+    margin: 30px 0 0 0;
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
     transition: background-color 0.3s, color 0.3s;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Dark Mode Styles */
+/* Headings */
+h1 {
+    font-size: 3rem; /* 30px */
+    color: #444;
+}
+
+h2 {
+    font-size: 2.4rem; /* 24px */
+    color: #444;
+}
+
+/* Links and Tooltip */
+a {
+    color: #007BFF;
+    text-decoration: none;
+    position: relative;
+    font-size: 1.6rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    margin-bottom: 0.5rem;
+    z-index: 1;
+}
+
+a:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Container */
+.container {
+    max-width: 80rem;
+    margin: 2em auto;
+    padding: 1em;
+    background: #fff;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    font-size: 1.6rem;
+}
+
+/* Lists */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 0.5em 0;
+    font-size: 1.6rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 2em;
+    padding: 1em;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5em;
+    min-height: 6rem;
+    font-size: 1.4rem;
+}
+
+footer span:last-of-type::after {
+    content: "© 2025 KJANAT. All rights reserved.";
+    display: block;
+    margin-top: 1rem;
+}
+
+/* Dark Mode */
 body.dark-mode {
     background-color: #121212;
     color: #eee;
@@ -24,9 +126,14 @@ body.dark-mode {
     color: #80cbc4;
 }
 
+.dark-mode a::after {
+    background-color: #eee;
+    color: #333;
+}
+
 .dark-mode .container {
     background-color: #212121;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0.2rem 0.4rem rgba(255, 255, 255, 0.1);
 }
 
 .dark-mode footer {
@@ -34,16 +141,20 @@ body.dark-mode {
     color: #fff;
 }
 
-/* Dark Mode Toggle Button Styles */
+/* Toggle Button */
 #darkModeToggle {
     background-color: #eee;
     color: #333;
     border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.4rem;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.6rem;
     transition: background-color 0.3s, color 0.3s;
+}
+
+#darkModeToggle:hover {
+    background-color: #ccc;
 }
 
 .dark-mode #darkModeToggle {
@@ -51,102 +162,15 @@ body.dark-mode {
     color: #eee;
 }
 
-h1,
-h2 {
-    color: #444;
+.dark-mode #darkModeToggle:hover {
+    background-color: #555;
 }
 
-a {
-    color: #007BFF;
-    text-decoration: none;
-    position: relative;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Tooltip Styles */
-a::after {
-    content: attr(abbr);
-    position: absolute;
-    left: 50%;
-    bottom: 100%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    margin-bottom: 5px;
-    z-index: 1;
-}
-
-.dark-mode a::after {
-    background-color: #eee;
-    color: #333;
-}
-
-a:hover::after {
-    opacity: 1;
-    visibility: visible;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin: 0.5em 0;
-}
-
-.container {
-    max-width: 800px;
-    margin: 2em auto;
-    padding: 1em;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-    text-align: center;
-    margin-top: 2em;
-    padding: 1em;
-    background-color: #ddd;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    /* align contents to middle of footer vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 0.5em;
-    min-height: 60px;
-}
-
-footer span:last-of-type::after {
-    /* newline, followed by  */
-    content: "© 2025 KJANAT. All rights reserved.";
-    display: block;
-    margin-top: 10px;
-}
-
-/* Mobile View Styles */
+/* Responsive Design */
 @media (max-width: 900px) {
     body {
-        width: -webkit-fill-available;
-        width: -moz-available;
+        width: 100vw;
         overflow-x: hidden;
-        height: 100vh;
-        overflow-y: auto;
     }
 
     .container {
@@ -155,17 +179,21 @@ footer span:last-of-type::after {
         padding: 0.5em;
     }
 
-    /* footer {
-        position: fixed;
-    } */
-
-    /* Mobile Tooltip Styles */
     a::after {
         left: 0;
-        right: auto;
         transform: none;
         text-align: center;
         width: auto;
-        min-width: 200px;
+        min-width: 20rem;
+    }
+}
+
+/* Accessibility: Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
     }
 }

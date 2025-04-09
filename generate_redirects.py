@@ -115,11 +115,11 @@ with open("public/index.html", "w") as index:
             description = data.get("description", "") if isinstance(data, dict) else ""
             if description:
                 index.write(
-                    f'\t\t\t<li><a href="{slug}.html" abbr="Will redirect to: {url}">{slug}</a>: {description}</li>\n'
+                    f'\t\t\t<li><a href="{slug}.html" data-tooltip="Will redirect to: {url}">{slug}</a>: {description}</li>\n'
                 )
             else:
                 index.write(
-                    f'\t\t\t<li><a href="{slug}.html" abbr="Will redirect to: {url}">{slug}</a></li>\n'
+                    f'\t\t\t<li><a href="{slug}.html" data-tooltip="Will redirect to: {url}">{slug}</a></li>\n'
                 )
         index.write("\t\t</ul>\n")
 
