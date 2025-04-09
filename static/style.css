@@ -45,7 +45,7 @@ a:hover {
 }
 
 a::after {
-    content: attr(data-tooltip);
+    content: attr(title);
     position: absolute;
     left: 50%;
     bottom: 100%;
@@ -103,12 +103,6 @@ footer {
     gap: 0.5em;
     min-height: 6rem;
     font-size: 1.4rem;
-}
-
-footer span:last-of-type::after {
-    content: "© 2025 KJANAT. All rights reserved.";
-    display: block;
-    margin-top: 1rem;
 }
 
 /* Dark Mode */

@@ -1,7 +1,12 @@
 # URL Shortener
 
-This project is a simple URL shortener that generates HTML redirect pages
-based on a JSON file of redirects.
+This project is a simple URL shortener that generates HTML redirect pages based on a JSON file of redirects.
+
+<div align="center">
+
+![url-shortener-example-1](/assets/images/example-1.svg "Example 1")
+
+</div>
 
 ## How It Works
 
@@ -11,28 +16,38 @@ based on a JSON file of redirects.
 
 ## Usage
 
-1. Create a [`redirects.json`](redirects.json) or [`redirects.yml`](redirects.yml) file in the project root with the following format:
+1. Create a [`redirects.json`](/redirects.json) or [`redirects.yml`](/redirects.yml) file in the project root with the following format:
 
-``` json
-{
-    "slug1": "https://example.com/page1",
-    "slug2": "https://example.com/page2",
-    "slug3": {
-        "url": "https://example.com/page3",
-        "description": "This is a description for page 3"
+    ``` json
+    {
+        "slug1": {
+            "url": "https://example.com/page1"
+        },
+        "slug2": {
+            "url": "https://example.com/page2",
+            "description": "This is a description for page 2"
+        },
+        "slug3": {
+            "url": "https://example.com/page3",
+            "description": "This is a description for page 3",
+            "category": "Category X"
+        }
     }
-}
-```
+    ```
 
-or
+    or
 
-``` yaml
-slug1: https://example.com/page1
-slug2: https://example.com/page2
-slug3:
-    description: "This is a description for page 3"
-    url: https://example.com/page3
-```
+    ``` yaml
+    slug1:
+        url: https://example.com/page1
+    slug2:
+        url: https://example.com/page2
+        description: "This is a description for page 2"
+    slug3:
+        url: https://example.com/page3
+        description: "This is a description for page 3"
+        category: "Category X"
+    ```
 
 > [!IMPORTANT]
 > If both `redirects.json` and `redirects.yml` files are present,
@@ -40,17 +55,17 @@ slug3:
 > and use that one for generating redirects.  
 > *When both files have the same number of entries,
 > the script will use `redirects.json` by default.*
-  
+
 > [!TIP]
 > Add a description for each slug in the JSON/YAML file
 > to provide additional context for the redirect.  
-> *The description is optional and will be included in the generated HTML file.*
+> *The description and category are optional and will be included in the generated HTML file.*
 
 2. Run the script:
 
-``` bash
-python generate_redirects.py
-```
+    ``` bash
+    python generate_redirects.py
+    ```
 
 3. The generated HTML files will be available in the `docs/` directory.
 

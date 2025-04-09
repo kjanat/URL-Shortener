@@ -1,0 +1,9 @@
+slug1:
+    url: https://example.com/page1
+slug2:
+    url: https://example.com/page2
+    description: "This is a description for page 2"
+slug3:
+    url: https://example.com/page3
+    description: "This is a description for page 3"
+    category: "Category X"

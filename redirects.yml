@@ -1,33 +1,33 @@
 cal:
-    description: Google Calendar
     url: https://www.google.com/calendar/hosted/kajkowalski.nl
+    description: Google Calendar
 docs:
-    category: Media
-    description: Paperless-ngx server
     url: https://docs.kajkowalski.nl
-books:
+    description: Paperless-ngx server
     category: Media
-    description: Calibre-Web server
+books:
     url: https://books.kjanat.com
+    description: Calibre-Web server
+    category: Media
 pdf:
-    category: Demo sites
-    description: PDF OCR (Python backend)
     url: https://pdf.kajkowalski.nl
-pdf-js:
+    description: PDF OCR (Python backend)
     category: Demo sites
-    description: PDF OCR (JS Backend)
+pdf-js:
     url: https://pdf-js.kajkowalski.nl
+    description: PDF OCR (JS Backend)
+    category: Demo sites
 new-entry:
-    category: New category
-    description: New entry description
     url: https://new-entry.example.com
+    description: New entry description
+    category: New category
 google.com:
     url: https://www.google.com
 testvision:
-    category: Geneeskunde
     url: https://vu.testvision.nl/online/kandidaten
     description: Examens VU
-testvision-vtg:
     category: Geneeskunde
+testvision-vtg:
     url: https://ivtg.testvision.nl/online/kandidaten
     description: interuniversitaire VoortgangsToets Geneeskunde (iVTG)
+    category: Geneeskunde

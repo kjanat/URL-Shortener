@@ -134,13 +134,13 @@ fi
 
 # Synchronize if needed
 if [ "$JSON_COUNT" -ne "$YAML_COUNT" ]; then
-    verbose "Synchronizing $DEST_TYPE file ('$DEST_FILE') from $SOURCE_TYPE file ('$SOURCE_FILE')."
     if [ "$DRY_RUN" = true ]; then
-        dry_run "Would update '$DEST_FILE' from '$SOURCE_FILE'."
+        dry_run "Would have re-created '$DEST_FILE' from '$SOURCE_FILE'."
     else
+        verbose "Re-creating $DEST_TYPE file ('$DEST_FILE') from $SOURCE_TYPE file ('$SOURCE_FILE')."
         verbose "Running command: $UPDATE_COMMAND"
         eval "$UPDATE_COMMAND" > "$DEST_FILE"
-        success "Successfully updated '$DEST_FILE' from '$SOURCE_FILE'."
+        success "Successfully re-created '$DEST_FILE' from '$SOURCE_FILE'."
     fi
 else
     success "Files are already synchronized."

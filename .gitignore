@@ -173,8 +173,8 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-#
-public/*.html
+.vscode/
 
-#
-make-psdocs.ps1
+public/
+
+.gitattributes
