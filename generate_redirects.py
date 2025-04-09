@@ -87,9 +87,7 @@ footer = """\t<footer>
 \t\t\ton GitHub
 \t\t</span>
 \t\t<span>{2}</span>
-\t</footer>""".format(
-    repo_name, repo_url, footer_attribution
-)
+\t</footer>""".format(repo_name, repo_url, footer_attribution)
 
 # Set the template for the redirect pages
 # The template includes a meta tag for redirection and a message for the user
@@ -127,7 +125,9 @@ with open("public/index.html", "w") as index:
     categorized_redirects = {}
     for slug, data in redirects.items():
         category = (
-            data.get("category", uncategorized_title) if isinstance(data, dict) else uncategorized_title
+            data.get("category", uncategorized_title)
+            if isinstance(data, dict)
+            else uncategorized_title
         )
         if category not in categorized_redirects:
             categorized_redirects[category] = []
