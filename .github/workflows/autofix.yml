@@ -22,8 +22,10 @@ jobs:
         with:
           version: "0.4.20"
           activate-environment: true
+
       # Fix lint errors
       - run: uv run ruff check --fix-only .
+
       # Format code
       - run: uv run ruff format .
 
