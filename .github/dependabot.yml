@@ -13,6 +13,10 @@ updates:
       time: "03:00"
       timezone: "Europe/Amsterdam"
     open-pull-requests-limit: 10
+    groups:
+      pip:
+        patterns:
+          - "*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -21,3 +25,7 @@ updates:
       time: "03:00"
       timezone: "Europe/Amsterdam"
     open-pull-requests-limit: 10
+    groups:
+      actions:
+        patterns:
+          - "*"
