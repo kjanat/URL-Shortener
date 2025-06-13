@@ -18,7 +18,7 @@ jobs:
         run: pip install ruff
 
       # Use uv to ensure we have the same ruff version in CI and locally.
-      - uses: astral-sh/setup-uv@6b9c6063abd6010835644d4c2e1bef4cf5cd0fca
+      - uses: astral-sh/setup-uv@f0ec1fc3b38f5e7cd731bb6ce540c5af426746bb
         with:
           version: "latest"
           activate-environment: true
@@ -29,4 +29,4 @@ jobs:
       # Format code
       - run: uv run ruff format .
 
-      - uses: autofix-ci/action@551dded8c6cc8a1054039c8bc0b8b48c51dfc6ef
+      - uses: autofix-ci/action@635ffb0c9798bd160680f18fd73371e355b85f27
