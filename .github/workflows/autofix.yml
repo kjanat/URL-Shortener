@@ -11,14 +11,14 @@ jobs:
   autofix:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       # Install ruff
       - name: Install ruff
         run: pip install ruff
 
       # Use uv to ensure we have the same ruff version in CI and locally.
-      - uses: astral-sh/setup-uv@f0ec1fc3b38f5e7cd731bb6ce540c5af426746bb
+      - uses: astral-sh/setup-uv@803947b9bd8e9f986429fa0c5a41c367cd732b41
         with:
           version: "latest"
           activate-environment: true
@@ -29,4 +29,4 @@ jobs:
       # Format code
       - run: uv run ruff format .
 
-      - uses: autofix-ci/action@635ffb0c9798bd160680f18fd73371e355b85f27
+      - uses: autofix-ci/action@7a166d7532b277f34e16238930461bf77f9d7ed8
