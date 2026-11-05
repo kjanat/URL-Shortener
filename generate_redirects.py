@@ -1,8 +1,9 @@
+import json
 import os
 import shutil
-import json
-import yaml
 from datetime import datetime
+
+import yaml
 
 # UI Variables
 ## Title for the index page
@@ -60,34 +61,34 @@ else:
 shutil.copytree("static/", "public/", dirs_exist_ok=True)
 
 # Set the default head for the HTML template
-head = """<!DOCTYPE html>
+head = f"""<!DOCTYPE html>
 <html lang="en">\n\n<head>
 \t<!-- Default header values for all pages -->
 \t<meta charset="UTF-8">
 \t<meta name="viewport" content="width=device-width, initial-scale=1.0">
 \t<meta http-equiv="X-UA-Compatible" content="ie=edge">
-\t<meta name="robots" content="{2}">
+\t<meta name="robots" content="{robots}">
 \t<link rel="preconnect" href="https://fonts.googleapis.com">
 \t<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-\t<link rel="preconnect" href="{0}">
+\t<link rel="preconnect" href="{custom_domain}">
 \t<link rel="preload" href="style.css" as="style">
 \t<link rel="preload" href="script.js" as="script">
 \t<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 \t<link href="style.css" rel="stylesheet" type="text/css">
-\t<meta name="description" content="{1}">
+\t<meta name="description" content="{page_description}">
 \t<!-- Page generated dynamically -->
-""".format(custom_domain, page_description, robots)
+"""
 
 # Set the footer for the HTML template
-footer = """\t<footer>
+footer = f"""\t<footer>
 \t\t<span>
-\t\t\t<a href="{1}" target="_blank" rel="noopener" title="GitHub Repository">
-\t\t\t\t{0}
+\t\t\t<a href="{repo_url}" target="_blank" rel="noopener" title="GitHub Repository">
+\t\t\t\t{repo_name}
 \t\t\t</a>
 \t\t\ton GitHub
 \t\t</span>
-\t\t<span>{2}</span>
-\t</footer>""".format(repo_name, repo_url, footer_attribution)
+\t\t<span>{footer_attribution}</span>
+\t</footer>"""
 
 # Set the template for the redirect pages
 # The template includes a meta tag for redirection and a message for the user
@@ -112,13 +113,13 @@ for slug, data in redirects.items():
 # Generate the index.html file with the updated style
 with open("public/index.html", "w") as index:
     index.write(
-        """{0}\t<link rel="shortcut icon" href="{1}" type="image/x-icon">
+        f"""{head}\t<link rel="shortcut icon" href="{icon_path}" type="image/x-icon">
 \t<title>Redirect links</title>
 </head>\n
 <body>
 \t<div class="container">
-\t\t<h1>{2}</h1>
-""".format(head, icon_path, index_title)
+\t\t<h1>{index_title}</h1>
+"""
     )
 
     # Group redirects by category
@@ -150,10 +151,10 @@ with open("public/index.html", "w") as index:
         index.write("\t\t</ul>\n")
 
     index.write(
-        """\t\t<button id="darkModeToggle">Toggle Dark Mode</button>
+        f"""\t\t<button id="darkModeToggle">Toggle Dark Mode</button>
 \t</div>
-{0}
+{footer}
 \t<script src='script.js'></script>
 </body>\n
-</html>\n""".format(footer)
+</html>\n"""
     )
